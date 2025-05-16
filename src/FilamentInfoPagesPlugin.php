@@ -6,6 +6,7 @@ namespace RectitudeOpen\FilamentInfoPages;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use RectitudeOpen\FilamentInfoPages\Resources\PageResource;
 
 class FilamentInfoPagesPlugin implements Plugin
 {
@@ -16,7 +17,10 @@ class FilamentInfoPagesPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->resources([
+                config('filament-info-pages.filament_resource', PageResource::class),
+            ]);
     }
 
     public function boot(Panel $panel): void

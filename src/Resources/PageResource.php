@@ -1,0 +1,184 @@
+<?php
+
+declare(strict_types=1);
+
+namespace RectitudeOpen\FilamentInfoPages\Resources;
+
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\ToggleButtons;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
+use RectitudeOpen\FilamentInfoPages\Models\Page;
+use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
+use RectitudeOpen\FilamentTinyEditor6\TinyEditor;
+use TomatoPHP\FilamentMediaManager\Form\MediaManagerInput;
+
+class PageResource extends Resource
+{
+    public static function getModel(): string
+    {
+        return config('filament-info-pages.model', Page::class);
+    }
+
+    public static function getNavigationIcon(): string | Htmlable | null
+    {
+        return static::$navigationIcon ?? config('filament-info-pages.navigation_icon', 'heroicon-o-document-text');
+    }
+
+    public static function getNavigationSort(): ?int
+    {
+        return config('filament-info-pages.navigation_sort', 0);
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('menu.nav_group.content');
+    }
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                Grid::make(['sm' => 3])->schema([
+                    Grid::make()->schema([
+                        TextInput::make('title')
+                            ->label(__('Title'))
+                            ->required()
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+                        TinyEditor::make('content')
+                            ->fileAttachmentsDisk('public')
+                            ->fileAttachmentsVisibility('public')
+                            ->fileAttachmentsDirectory('uploads')
+                            ->columnSpan('full'),
+                    ])->columnSpan(['xl' => 2]),
+                    Grid::make()->schema([
+                        Section::make(__('Meta'))
+                            ->compact()
+                            ->schema([
+                                TextInput::make('slug')
+                                    ->label(__('Slug'))
+                                    ->maxLength(255)
+                                    ->inlineLabel()
+                                    ->columnSpanFull(),
+                                ToggleButtons::make('status')
+                                    ->options([
+                                        1 => 'Active',
+                                        2 => 'Suspended',
+                                    ])
+                                    ->default(1)
+                                    ->colors([
+                                        1 => 'success',
+                                        2 => 'warning',
+                                    ])
+                                    ->icons([
+                                        1 => 'heroicon-o-check-circle',
+                                        2 => 'heroicon-o-x-circle',
+                                    ])
+                                    ->inline()
+                                    ->inlineLabel(),
+                                DateTimePicker::make('created_at')
+                                    ->disabled()
+                                    ->label(__('Created At'))
+                                    ->native(false)
+                                    ->default(now())
+                                    ->suffixIcon('heroicon-o-calendar')
+                                    ->columnSpanFull()
+                                    ->inlineLabel()
+                                    ->format(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s'))
+                                    ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
+                                DateTimePicker::make('updated_at')
+                                    ->label(__('Updated At'))
+                                    ->native(false)
+                                    ->default(now())
+                                    ->suffixIcon('heroicon-o-calendar')
+                                    ->columnSpanFull()
+                                    ->inlineLabel()
+                                    ->format(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s'))
+                                    ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
+                            ])
+                            ->collapsible(),
+                        Section::make(__('Files'))
+                            ->compact()
+                            ->schema([
+                                MediaManagerInput::make('files')
+                                    ->defaultItems(0)
+                                    ->hiddenLabel()
+                                    ->disk('public')
+                                    ->reorderable(false)
+                                    ->schema([])
+                                    ->nullable(),
+                            ]),
+                    ])->columnSpan(['xl' => 1]),
+                ]),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('title')
+                    ->label(__('Title'))
+                    ->searchable()
+                    ->limit(50),
+                IconColumn::make('status')
+                    ->icon(fn ($state): string => match ($state) {
+                        1 => 'heroicon-o-check-circle',
+                        2 => 'heroicon-o-x-circle',
+                        default => 'heroicon-o-question-mark-circle',
+                    })
+                    ->color(fn ($state): string => match ($state) {
+                        1 => 'success',
+                        2 => 'danger',
+                        default => 'warning',
+                    }),
+                TextColumn::make('updated_at')
+                    ->label(__('Updated At'))
+                    ->sortable(),
+            ])
+            ->filters([
+                SelectFilter::make('status')
+                    ->label(__('Status'))
+                    ->options([
+                        1 => 'Active',
+                        2 => 'Suspended',
+                    ]),
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ])
+            ->defaultSort('created_at', 'desc');
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListPages::route('/'),
+            'create' => Pages\CreatePage::route('/create'),
+            'edit' => Pages\EditPage::route('/{record}/edit'),
+            'revisions' => Pages\PageRevisions::route('/{record}/revisions'),
+        ];
+    }
+}

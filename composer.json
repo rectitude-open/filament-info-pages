@@ -20,8 +20,12 @@
     ],
     "require": {
         "php": "^8.1",
+        "cviebrock/eloquent-sluggable": "^10.0",
         "filament/filament": "^3.0",
-        "spatie/laravel-package-tools": "^1.15.0"
+        "mansoor/filament-versionable": "^0.0.13",
+        "rectitude-open/filament-tinyeditor-6": "^6.3",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "tomatophp/filament-media-manager": "^1.1"
     },
     "require-dev": {
         "laravel/pint": "^1.0",

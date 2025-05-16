@@ -65,27 +65,27 @@ class FilamentInfoPagesServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         // Asset Registration
-        FilamentAsset::register(
-            $this->getAssets(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::register(
+        //     $this->getAssets(),
+        //     $this->getAssetPackageName()
+        // );
 
-        FilamentAsset::registerScriptData(
-            $this->getScriptData(),
-            $this->getAssetPackageName()
-        );
+        // FilamentAsset::registerScriptData(
+        //     $this->getScriptData(),
+        //     $this->getAssetPackageName()
+        // );
 
         // Icon Registration
-        FilamentIcon::register($this->getIcons());
+        // FilamentIcon::register($this->getIcons());
 
         // Handle Stubs
-        if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
-                $this->publishes([
-                    $file->getRealPath() => base_path("stubs/filament-info-pages/{$file->getFilename()}"),
-                ], 'filament-info-pages-stubs');
-            }
-        }
+        // if (app()->runningInConsole()) {
+        //     foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+        //         $this->publishes([
+        //             $file->getRealPath() => base_path("stubs/filament-info-pages/{$file->getFilename()}"),
+        //         ], 'filament-info-pages-stubs');
+        //     }
+        // }
 
         // Testing
         Testable::mixin(new TestsFilamentInfoPages);
@@ -103,8 +103,8 @@ class FilamentInfoPagesServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('filament-info-pages', __DIR__ . '/../resources/dist/components/filament-info-pages.js'),
-            Css::make('filament-info-pages-styles', __DIR__ . '/../resources/dist/filament-info-pages.css'),
-            Js::make('filament-info-pages-scripts', __DIR__ . '/../resources/dist/filament-info-pages.js'),
+            // Css::make('filament-info-pages-styles', __DIR__ . '/../resources/dist/filament-info-pages.css'),
+            // Js::make('filament-info-pages-scripts', __DIR__ . '/../resources/dist/filament-info-pages.js'),
         ];
     }
 
