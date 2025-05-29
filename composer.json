@@ -1,8 +1,9 @@
 {
     "name": "rectitude-open/filament-info-pages",
-    "description": "This is my package filament-info-pages",
+    "description": "A Filament plugin for easily managing single-page content.",
     "keywords": [
-        "filament",
+        "single page",
+        "laravel",
         "filament plugin"
     ],
     "homepage": "https://github.com/rectitude-open/filament-info-pages",
@@ -13,8 +14,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Rectitude Open",
-            "email": "open@rectitude.dev",
+            "name": "Aspirant Zhang",
+            "email": "admin@aspirantzhang.com",
             "role": "Developer"
         }
     ],

@@ -1,12 +1,20 @@
-# This is my package filament-info-pages
+![Filament Info Pages Banner](./art/Filament%20Info%20Pages.png)
+# Filament Info Pages
 
 ![Do not use](https://img.shields.io/badge/Under%20development-Don't%20use-red)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rectitude-open/filament-info-pages.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-info-pages)
 [![Tests](https://github.com/rectitude-open/filament-info-pages/actions/workflows/run-tests.yml/badge.svg)](https://github.com/rectitude-open/filament-info-pages/actions/workflows/run-tests.yml)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%205-brightgreen)](https://phpstan.org/)
 [![Total Downloads](https://img.shields.io/packagist/dt/rectitude-open/filament-info-pages.svg?style=flat-square)](https://packagist.org/packages/rectitude-open/filament-info-pages)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/rectitude-open/filament-info-pages/pulls)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Filament Info Pages provides a simple way to create and manage single-page content, such as "About Us" or "Privacy Policy" pages, directly within your Filament admin panel. It offers a straightforward interface for quickly adding and editing these informational pages without unnecessary complexity.
+
+This package is also a standalone part of a CMS project: [FilaPress](https://github.com/rectitude-open/filapress).
+
+Resource | Page | Cluster | Migration | Model | Config | View | Localization
+--- | --- | --- | --- | --- | --- | --- | ---
+✅ | ❌| ❌ | ✅ | ✅ | ✅ | ❌ | ✅  
 
 ## Installation
 
@@ -38,15 +46,34 @@ php artisan vendor:publish --tag="filament-info-pages-views"
 This is the contents of the published config file:
 
 ```php
-return [
-];
+    'filament_resource' => RectitudeOpen\FilamentInfoPages\Resources\PageResource::class,
+    'model' => RectitudeOpen\FilamentInfoPages\Models\Page::class,
+    'navigation_sort' => 0,
+    'navigation_icon' => 'heroicon-o-document-text',
+    'datetime_format' => 'Y-m-d H:i:s',
 ```
 
 ## Usage
 
+The package provides a resource page that allows you to view Pages in your Filament admin panel. 
+
+To use the resource page provided by this package, you need to register it in your Panel Provider first.
+
 ```php
-$filamentInfoPages = new RectitudeOpen\FilamentInfoPages();
-echo $filamentInfoPages->echoPhrase('Hello, RectitudeOpen!');
+namespace App\Providers\Filament;
+
+use RectitudeOpen\FilamentInfoPages\FilamentInfoPagesPlugin;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->plugins([
+                FilamentInfoPagesPlugin::make()
+            ]);
+    }
+}
 ```
 
 ## Testing
