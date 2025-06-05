@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
+use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -17,6 +18,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class Page extends Model implements HasMedia
 {
     use HasFactory;
+    use HasSEO;
     use InteractsWithMedia;
     use Sluggable;
     use SoftDeletes;

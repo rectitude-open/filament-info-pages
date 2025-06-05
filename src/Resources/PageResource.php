@@ -17,6 +17,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
+use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
 use RectitudeOpen\FilamentTinyEditor6\TinyEditor;
@@ -105,6 +106,12 @@ class PageResource extends Resource
                                     ->inlineLabel()
                                     ->format(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s'))
                                     ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
+                            ])
+                            ->collapsible(),
+                        Section::make(__('SEO'))
+                            ->compact()
+                            ->schema([
+                                SEO::make(),
                             ])
                             ->collapsible(),
                         Section::make(__('Files'))
