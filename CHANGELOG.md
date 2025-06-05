@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.1.0...v1.2.0) (2025-06-05)
+
+
+### Features
+
+* add SEO support to Page model and resource, and update composer dependencies ([77da09d](https://github.com/rectitude-open/filament-info-pages/commit/77da09df445e828f61354b0c5dc87650ddd695fb))
+
+
+### Bug Fixes
+
+* update credits in README to reflect current contributor ([1974b3f](https://github.com/rectitude-open/filament-info-pages/commit/1974b3f14402fe35e77002b69dfac1be657a9ee0))
+* update migration name for clarity in FilamentInfoPagesServiceProvider ([b99d1b3](https://github.com/rectitude-open/filament-info-pages/commit/b99d1b3efa5a95e58a85053db7ea262338abc3bc))
+
 ## [1.1.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.0.1...v1.1.0) (2025-05-29)
 
 
