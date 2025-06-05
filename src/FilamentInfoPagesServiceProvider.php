@@ -148,7 +148,7 @@ class FilamentInfoPagesServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_filament-info-pages_table',
+            'create_pages_table',
         ];
     }
 }
