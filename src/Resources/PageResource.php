@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentInfoPages\Resources;
 
+use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
@@ -21,7 +22,6 @@ use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
 use RectitudeOpen\FilamentTinyEditor6\TinyEditor;
-use TomatoPHP\FilamentMediaManager\Form\MediaManagerInput;
 
 class PageResource extends Resource
 {
@@ -114,16 +114,12 @@ class PageResource extends Resource
                                 SEO::make(),
                             ])
                             ->collapsible(),
-                        Section::make(__('Files'))
+                        Section::make(__('Featured Image'))
                             ->compact()
                             ->schema([
-                                MediaManagerInput::make('files')
-                                    ->defaultItems(0)
-                                    ->hiddenLabel()
-                                    ->disk('public')
-                                    ->reorderable(false)
-                                    ->schema([])
-                                    ->nullable(),
+                                CuratorPicker::make('featured_image_id')
+                                    ->relationship('featured_image', 'id')
+                                    ->hiddenLabel(),
                             ]),
                     ])->columnSpan(['xl' => 1]),
                 ]),

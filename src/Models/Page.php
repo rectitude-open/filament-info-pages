@@ -4,29 +4,27 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentInfoPages\Models;
 
+use Awcodes\Curator\Models\Media;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Page extends Model implements HasMedia
+class Page extends Model
 {
     use HasFactory;
     use HasSEO;
-    use InteractsWithMedia;
     use Sluggable;
     use SoftDeletes;
     use Versionable;
 
-    protected $fillable = ['title', 'slug', 'content', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['title', 'slug', 'content', 'status', 'featured_image_id', 'created_at', 'updated_at'];
 
-    protected $versionable = ['title', 'slug', 'content', 'status'];
+    protected $versionable = ['title', 'slug', 'content', 'status', 'featured_image_id'];
 
     protected $versionStrategy = VersionStrategy::SNAPSHOT;
 
@@ -39,8 +37,8 @@ class Page extends Model implements HasMedia
         ];
     }
 
-    public function registerMediaConversions(?Media $media = null): void
+    public function featuredImage(): BelongsTo
     {
-        $this->addMediaCollection('files');
+        return $this->belongsTo(Media::class, 'featured_image_id', 'id');
     }
 }
