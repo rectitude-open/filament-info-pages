@@ -119,7 +119,9 @@ class PageResource extends Resource
                             ->schema([
                                 CuratorPicker::make('featured_image_id')
                                     ->relationship('featured_image', 'id')
-                                    ->hiddenLabel(),
+                                    ->hiddenLabel()
+                                    ->maxItems(1)
+                                    ->directory('page'),
                             ]),
                     ])->columnSpan(['xl' => 1]),
                 ]),
