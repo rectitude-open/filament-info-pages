@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.3.0...v1.4.0) (2025-06-14)
+
+
+### Features
+
+* add featured image support to Page resource and migration ([61a2409](https://github.com/rectitude-open/filament-info-pages/commit/61a24097d3f85c8df6b6ac2a47d4fcf49699a40c))
+
 ## [1.3.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.2.0...v1.3.0) (2025-06-14)
 
 
