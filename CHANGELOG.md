@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.4.1...v1.5.0) (2025-06-15)
+
+
+### Features
+
+* add CuratorColumn for featured image in PageResource ([4d21857](https://github.com/rectitude-open/filament-info-pages/commit/4d218578c511c4551e628616f13a0c09754c3c0a))
+* enable list display for featured image relationship ([2e3be44](https://github.com/rectitude-open/filament-info-pages/commit/2e3be44a9c733fbe631c88aba6f4700793d591ed))
+
 ## [1.4.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.4.0...v1.4.1) (2025-06-14)
 
 
