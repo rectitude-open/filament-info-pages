@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace RectitudeOpen\FilamentInfoPages\Resources;
 
 use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Section;
@@ -137,6 +138,9 @@ class PageResource extends Resource
                     ->label(__('Title'))
                     ->searchable()
                     ->limit(50),
+                CuratorColumn::make('featured_image')
+                    ->label('')
+                    ->size(30),
                 IconColumn::make('status')
                     ->icon(fn ($state): string => match ($state) {
                         1 => 'heroicon-o-check-circle',
