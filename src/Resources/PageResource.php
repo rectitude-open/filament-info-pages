@@ -121,7 +121,8 @@ class PageResource extends Resource
                                     ->relationship('featured_image', 'id')
                                     ->hiddenLabel()
                                     ->maxItems(1)
-                                    ->directory('page'),
+                                    ->directory('page')
+                                    ->listDisplay(true),
                             ]),
                     ])->columnSpan(['xl' => 1]),
                 ]),
