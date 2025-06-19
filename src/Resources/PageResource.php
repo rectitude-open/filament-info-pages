@@ -8,6 +8,7 @@ use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Awcodes\Curator\Components\Tables\CuratorColumn;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
@@ -22,7 +23,6 @@ use Illuminate\Contracts\Support\Htmlable;
 use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
-use RectitudeOpen\FilamentTinyEditor6\TinyEditor;
 
 class PageResource extends Resource
 {
@@ -48,6 +48,14 @@ class PageResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $editorClass = config('filament-info-pages.editor_component_class', RichEditor::class);
+        $editorComponent = $editorClass::make('content')
+            ->label(__('Content'))
+            ->fileAttachmentsDisk('public')
+            ->fileAttachmentsDirectory('uploads')
+            ->fileAttachmentsVisibility('public')
+            ->columnSpan('full');
+
         return $form
             ->schema([
                 Grid::make(['sm' => 3])->schema([
@@ -57,11 +65,13 @@ class PageResource extends Resource
                             ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
-                        TinyEditor::make('content')
-                            ->fileAttachmentsDisk('public')
-                            ->fileAttachmentsVisibility('public')
-                            ->fileAttachmentsDirectory('uploads')
-                            ->columnSpan('full'),
+                        $editorComponent,
+                        Section::make(__('SEO'))
+                            ->compact()
+                            ->schema([
+                                SEO::make(),
+                            ])
+                            ->collapsible(),
                     ])->columnSpan(['xl' => 2]),
                     Grid::make()->schema([
                         Section::make(__('Meta'))
@@ -107,12 +117,6 @@ class PageResource extends Resource
                                     ->inlineLabel()
                                     ->format(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s'))
                                     ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
-                            ])
-                            ->collapsible(),
-                        Section::make(__('SEO'))
-                            ->compact()
-                            ->schema([
-                                SEO::make(),
                             ])
                             ->collapsible(),
                         Section::make(__('Featured Image'))

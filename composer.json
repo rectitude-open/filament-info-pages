@@ -27,7 +27,6 @@
         "mansoor/filament-versionable": "^0.0.13",
         "ralphjsmit/laravel-filament-seo": "^1.5",
         "ralphjsmit/laravel-seo": "^1.7",
-        "rectitude-open/filament-tinyeditor-6": "^6.3",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
