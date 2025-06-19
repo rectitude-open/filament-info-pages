@@ -32,13 +32,12 @@ class FilamentInfoPagesServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package->name(static::$name)
-            ->hasCommands($this->getCommands())
+            // ->hasCommands($this->getCommands())
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToRunMigrations()
-                    ->askToStarRepoOnGitHub('rectitude-open/filament-info-pages');
+                    ->askToRunMigrations();
             });
 
         $configFileName = $package->shortName();
@@ -88,7 +87,7 @@ class FilamentInfoPagesServiceProvider extends PackageServiceProvider
         // }
 
         // Testing
-        Testable::mixin(new TestsFilamentInfoPages);
+        // Testable::mixin(new TestsFilamentInfoPages);
     }
 
     protected function getAssetPackageName(): ?string
