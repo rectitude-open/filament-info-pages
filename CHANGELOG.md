@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.6.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.5.0...v1.6.0) (2025-06-19)
+
+
+### Features
+
+* add localization support for PageResource fields and navigation ([3553b77](https://github.com/rectitude-open/filament-info-pages/commit/3553b77b49a31b531b0b08d55015d60ec75ae81d))
+* implement header actions for EditPage with revisions and delete options ([aec2b3f](https://github.com/rectitude-open/filament-info-pages/commit/aec2b3fbd6fe00da79ab195f7b9cc4f835191c49))
+* replace TinyEditor with configurable editor component in PageResource ([eff6976](https://github.com/rectitude-open/filament-info-pages/commit/eff6976a03ba7c0652fb19895a44cab1110d39fd))
+* update README to include dependency notes and translation publishing instructions ([542f8b8](https://github.com/rectitude-open/filament-info-pages/commit/542f8b8eb3f6401a8b5829d2468d41f84c9b497c))
+
 ## [1.5.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.4.1...v1.5.0) (2025-06-15)
 
 
