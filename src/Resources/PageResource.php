@@ -41,16 +41,21 @@ class PageResource extends Resource
         return config('filament-info-pages.navigation_sort', 0);
     }
 
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-info-pages::filament-info-pages.nav.label');
+    }
+
     public static function getNavigationGroup(): ?string
     {
-        return __('menu.nav_group.content');
+        return __('filament-info-pages::filament-info-pages.nav.group');
     }
 
     public static function form(Form $form): Form
     {
         $editorClass = config('filament-info-pages.editor_component_class', RichEditor::class);
         $editorComponent = $editorClass::make('content')
-            ->label(__('Content'))
+            ->label(__('filament-info-pages::filament-info-pages.field.content'))
             ->fileAttachmentsDisk('public')
             ->fileAttachmentsDirectory('uploads')
             ->fileAttachmentsVisibility('public')
@@ -61,12 +66,12 @@ class PageResource extends Resource
                 Grid::make(['sm' => 3])->schema([
                     Grid::make()->schema([
                         TextInput::make('title')
-                            ->label(__('Title'))
+                            ->label(__('filament-info-pages::filament-info-pages.field.title'))
                             ->required()
                             ->maxLength(255)
                             ->columnSpanFull(),
                         $editorComponent,
-                        Section::make(__('SEO'))
+                        Section::make(__('filament-info-pages::filament-info-pages.field.seo'))
                             ->compact()
                             ->schema([
                                 SEO::make(),
@@ -74,18 +79,18 @@ class PageResource extends Resource
                             ->collapsible(),
                     ])->columnSpan(['xl' => 2]),
                     Grid::make()->schema([
-                        Section::make(__('Meta'))
+                        Section::make(__('filament-info-pages::filament-info-pages.field.meta'))
                             ->compact()
                             ->schema([
                                 TextInput::make('slug')
-                                    ->label(__('Slug'))
+                                    ->label(__('filament-info-pages::filament-info-pages.field.slug'))
                                     ->maxLength(255)
                                     ->inlineLabel()
                                     ->columnSpanFull(),
                                 ToggleButtons::make('status')
                                     ->options([
-                                        1 => 'Active',
-                                        2 => 'Suspended',
+                                        1 => __('filament-info-pages::filament-info-pages.field.status_active'),
+                                        2 => __('filament-info-pages::filament-info-pages.field.status_suspended'),
                                     ])
                                     ->default(1)
                                     ->colors([
@@ -100,7 +105,7 @@ class PageResource extends Resource
                                     ->inlineLabel(),
                                 DateTimePicker::make('created_at')
                                     ->disabled()
-                                    ->label(__('Created At'))
+                                    ->label(__('filament-info-pages::filament-info-pages.field.created_at'))
                                     ->native(false)
                                     ->default(now())
                                     ->suffixIcon('heroicon-o-calendar')
@@ -109,7 +114,7 @@ class PageResource extends Resource
                                     ->format(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s'))
                                     ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
                                 DateTimePicker::make('updated_at')
-                                    ->label(__('Updated At'))
+                                    ->label(__('filament-info-pages::filament-info-pages.field.updated_at'))
                                     ->native(false)
                                     ->default(now())
                                     ->suffixIcon('heroicon-o-calendar')
@@ -119,7 +124,7 @@ class PageResource extends Resource
                                     ->displayFormat(config('filament-info-pages.datetime_format', 'Y-m-d H:i:s')),
                             ])
                             ->collapsible(),
-                        Section::make(__('Featured Image'))
+                        Section::make(__('filament-info-pages::filament-info-pages.field.featured_image'))
                             ->compact()
                             ->schema([
                                 CuratorPicker::make('featured_image_id')
@@ -139,13 +144,14 @@ class PageResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->label(__('Title'))
+                    ->label(__('filament-info-pages::filament-info-pages.field.title'))
                     ->searchable()
                     ->limit(50),
                 CuratorColumn::make('featured_image')
                     ->label('')
                     ->size(30),
                 IconColumn::make('status')
+                    ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->icon(fn ($state): string => match ($state) {
                         1 => 'heroicon-o-check-circle',
                         2 => 'heroicon-o-x-circle',
@@ -157,12 +163,12 @@ class PageResource extends Resource
                         default => 'warning',
                     }),
                 TextColumn::make('updated_at')
-                    ->label(__('Updated At'))
+                    ->label(__('filament-info-pages::filament-info-pages.field.updated_at'))
                     ->sortable(),
             ])
             ->filters([
                 SelectFilter::make('status')
-                    ->label(__('Status'))
+                    ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->options([
                         1 => 'Active',
                         2 => 'Suspended',
