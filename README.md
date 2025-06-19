@@ -12,6 +12,9 @@ Filament Info Pages provides a simple way to create and manage single-page conte
 
 This package is also a standalone part of a CMS project: [FilaPress](https://github.com/rectitude-open/filapress).
 
+> **Note:** This plugin relies on several excellent Laravel/Filament plugins. Before installing Filament Info Pages, you must ensure that all the following dependencies are installed and properly configured in your project.
+[Eloquent Sluggable](https://github.com/cviebrock/eloquent-sluggable), [Filament Versionable](https://github.com/mansoorkhan96/filament-versionable), [Filament SEO](https://github.com/ralphjsmit/laravel-filament-seo), [Filament Curator](https://github.com/awcodes/filament-curator)
+
 Resource | Page | Cluster | Migration | Model | Config | View | Localization
 --- | --- | --- | --- | --- | --- | --- | ---
 ✅ | ❌| ❌ | ✅ | ✅ | ✅ | ❌ | ✅  
@@ -37,20 +40,23 @@ You can publish the config file with:
 php artisan vendor:publish --tag="filament-info-pages-config"
 ```
 
-Optionally, you can publish the views using
+Optionally, you can publish the translations using
 
 ```bash
-php artisan vendor:publish --tag="filament-info-pages-views"
+php artisan vendor:publish --tag="filament-info-pages-translations"
 ```
 
 This is the contents of the published config file:
 
 ```php
+return [
     'filament_resource' => RectitudeOpen\FilamentInfoPages\Resources\PageResource::class,
     'model' => RectitudeOpen\FilamentInfoPages\Models\Page::class,
     'navigation_sort' => 0,
     'navigation_icon' => 'heroicon-o-document-text',
     'datetime_format' => 'Y-m-d H:i:s',
+    'editor_component_class' => \Filament\Forms\Components\RichEditor::class,
+];
 ```
 
 ## Usage
