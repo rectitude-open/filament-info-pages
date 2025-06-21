@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
+use RectitudeOpen\FilamentInfoPages\Database\Factories\PageFactory;
 
 class Page extends Model
 {
@@ -40,5 +41,10 @@ class Page extends Model
     public function featured_image(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'featured_image_id', 'id');
+    }
+
+    protected static function newFactory()
+    {
+        return PageFactory::new();
     }
 }
