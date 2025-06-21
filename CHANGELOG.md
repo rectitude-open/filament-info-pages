@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.6.0...v1.7.0) (2025-06-21)
+
+
+### Features
+
+* add more translation files ([e8a41e7](https://github.com/rectitude-open/filament-info-pages/commit/e8a41e700ec71211b5a35ab48033acde8dc15974))
+* enhance Page model with factory integration and model definition ([e0109e1](https://github.com/rectitude-open/filament-info-pages/commit/e0109e17c136c237c0c47a45e4ee56a35d17ed4d))
+
 ## [1.6.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.5.0...v1.6.0) (2025-06-19)
 
 
