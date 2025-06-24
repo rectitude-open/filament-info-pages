@@ -30,16 +30,13 @@
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
+        "larastan/larastan": "^2.11",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.9",
-        "larastan/larastan": "^2.0",
         "orchestra/testbench": "^8.0",
         "pestphp/pest": "^2.1",
         "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0"
+        "pestphp/pest-plugin-laravel": "^2.0"
     },
     "autoload": {
         "psr-4": {
@@ -62,8 +59,7 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
+            "pestphp/pest-plugin": true
         }
     },
     "extra": {
