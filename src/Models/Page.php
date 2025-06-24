@@ -6,6 +6,8 @@ namespace RectitudeOpen\FilamentInfoPages\Models;
 
 use Awcodes\Curator\Models\Media;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -41,6 +43,13 @@ class Page extends Model
     public function featured_image(): BelongsTo
     {
         return $this->belongsTo(Media::class, 'featured_image_id', 'id');
+    }
+
+    // @phpstan-ignore-next-line
+    #[Scope]
+    protected function withSlug(Builder $query, string $slug): void
+    {
+        $query->where('slug', $slug);
     }
 
     protected static function newFactory()
