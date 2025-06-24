@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.8.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.7.0...v1.8.0) (2025-06-24)
+
+
+### Features
+
+* add scope for filtering by slug in Page model ([66c0664](https://github.com/rectitude-open/filament-info-pages/commit/66c066413eb25bfbfcfa1bfe3ea9818ba7729839))
+* update dev dependencies in composer.json and phpstan.neon.dist ([9c461ec](https://github.com/rectitude-open/filament-info-pages/commit/9c461ece665de99fd60089edc0fdc2747bdc943b))
+* update pages table schema with increments for id and unique slug ([fb90525](https://github.com/rectitude-open/filament-info-pages/commit/fb9052593d349d2c4adcc96747da3d2772291917))
+
 ## [1.7.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.6.0...v1.7.0) (2025-06-21)
 
 
