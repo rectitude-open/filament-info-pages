@@ -16,7 +16,22 @@ use Overtrue\LaravelVersionable\Versionable;
 use Overtrue\LaravelVersionable\VersionStrategy;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RectitudeOpen\FilamentInfoPages\Database\Factories\PageFactory;
+use Illuminate\Support\Carbon;
+use RalphJSmit\Laravel\SEO\Models\SEO;
 
+/**
+ * @property int $id
+ * @property string $title
+ * @property string $slug
+ * @property string $content
+ * @property string $status
+ * @property int|null $featured_image_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ * @property Media|null $featured_image
+ * @property SEO $seo
+ */
 class Page extends Model
 {
     use HasFactory;
@@ -24,6 +39,8 @@ class Page extends Model
     use Sluggable;
     use SoftDeletes;
     use Versionable;
+
+    protected $with = ['featured_image', 'seo'];
 
     protected $fillable = ['title', 'slug', 'content', 'status', 'featured_image_id', 'created_at', 'updated_at'];
 
@@ -50,6 +67,20 @@ class Page extends Model
     protected function withSlug(Builder $query, string $slug): void
     {
         $query->where('slug', $slug);
+    }
+
+    // @phpstan-ignore-next-line
+    #[Scope]
+    public function active(Builder $query): void
+    {
+        $query->where('status', 1);
+    }
+
+    // @phpstan-ignore-next-line
+    #[Scope]
+    public function suspended(Builder $query): void
+    {
+        $query->where('status', 0);
     }
 
     protected static function newFactory()
