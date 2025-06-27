@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.8.0...v1.9.0) (2025-06-27)
+
+
+### Features
+
+* implement methods for retrieving and filtering published pages by slug ([8af975a](https://github.com/rectitude-open/filament-info-pages/commit/8af975a93533d991e7790d6d834b9a2dfc998001))
+
+
+### Bug Fixes
+
+* reorder use statements for consistency and clarity in FilamentInfoPages and Page models ([b5993be](https://github.com/rectitude-open/filament-info-pages/commit/b5993becdcb5e57fca1fab4c405aac509bd627f0))
+
 ## [1.8.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.7.0...v1.8.0) (2025-06-24)
 
 
