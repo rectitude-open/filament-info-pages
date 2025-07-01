@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.9.0...v1.9.1) (2025-07-01)
+
+
+### Bug Fixes
+
+* change visibility of query scope methods to protected ([12f26f6](https://github.com/rectitude-open/filament-info-pages/commit/12f26f6b58a7491f9813385a2dc070cb0bcbc8fb))
+
 ## [1.9.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.8.0...v1.9.0) (2025-06-27)
 
 
