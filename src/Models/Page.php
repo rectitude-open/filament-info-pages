@@ -71,14 +71,14 @@ class Page extends Model
 
     // @phpstan-ignore-next-line
     #[Scope]
-    public function active(Builder $query): void
+    protected function active(Builder $query): void
     {
         $query->where('status', 1);
     }
 
     // @phpstan-ignore-next-line
     #[Scope]
-    public function suspended(Builder $query): void
+    protected function suspended(Builder $query): void
     {
         $query->where('status', 0);
     }
