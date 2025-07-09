@@ -51,7 +51,7 @@ class FilamentInfoPages
      */
     public function getAllLatestPublishedPages(): Collection
     {
-        $pages = $this->getModel()::published()->latest();
+        $pages = $this->getModel()::published()->latest()->get();
 
         /** @var Collection<int, Page> $pages */
         return $pages;
