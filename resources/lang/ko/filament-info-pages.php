@@ -17,7 +17,7 @@ return [
         'updated_at' => '수정일',
         'featured_image' => '대표 이미지',
         'status' => '상태',
-        'status_active' => '활성',
-        'status_suspended' => '중단됨',
+        'status_published' => '게시됨',
+        'status_draft' => '임시 저장',
     ],
 ];

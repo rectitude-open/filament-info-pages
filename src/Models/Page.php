@@ -31,6 +31,10 @@ use RectitudeOpen\FilamentInfoPages\Database\Factories\PageFactory;
  * @property Carbon|null $deleted_at
  * @property Media|null $featured_image
  * @property SEO $seo
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|static withSlug(string $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|static published()
+ * @method static \Illuminate\Database\Eloquent\Builder|static draft()
  */
 class Page extends Model
 {
@@ -71,14 +75,14 @@ class Page extends Model
 
     // @phpstan-ignore-next-line
     #[Scope]
-    protected function active(Builder $query): void
+    protected function published(Builder $query): void
     {
         $query->where('status', 1);
     }
 
     // @phpstan-ignore-next-line
     #[Scope]
-    protected function suspended(Builder $query): void
+    protected function draft(Builder $query): void
     {
         $query->where('status', 0);
     }

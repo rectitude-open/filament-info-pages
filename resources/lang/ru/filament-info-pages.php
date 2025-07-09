@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Обновлено',
         'featured_image' => 'Изображение',
         'status' => 'Статус',
-        'status_active' => 'Активно',
-        'status_suspended' => 'Приостановлено',
+        'status_published' => 'Опубликовано',
+        'status_draft' => 'Черновик',
     ],
 ];

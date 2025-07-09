@@ -17,7 +17,7 @@ return [
         'updated_at' => '更新日',
         'featured_image' => 'アイキャッチ画像',
         'status' => 'ステータス',
-        'status_active' => '有効',
-        'status_suspended' => '停止',
+        'status_published' => '公開',
+        'status_draft' => '下書き',
     ],
 ];

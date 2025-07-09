@@ -5,19 +5,19 @@ declare(strict_types=1);
 return [
     'nav' => [
         'label' => 'Faqet',
-        'group' => 'Përmbajtja',
+        'group' => 'Përmbajtje',
     ],
     'field' => [
-        'content' => 'Përmbajtja',
+        'content' => 'Përmbajtje',
         'title' => 'Titulli',
         'seo' => 'SEO',
         'meta' => 'Meta',
         'slug' => 'Slug',
         'created_at' => 'Krijuar më',
         'updated_at' => 'Përditësuar më',
-        'featured_image' => 'Imazhi Kryesor',
+        'featured_image' => 'Imazhi kryesor',
         'status' => 'Statusi',
-        'status_active' => 'Aktiv',
-        'status_suspended' => 'Pezulluar',
+        'status_published' => 'Publikuar',
+        'status_draft' => 'Draft',
     ],
 ];

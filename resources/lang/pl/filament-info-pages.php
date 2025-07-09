@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Zaktualizowano',
         'featured_image' => 'Obraz wyróżniający',
         'status' => 'Status',
-        'status_active' => 'Aktywny',
-        'status_suspended' => 'Zawieszony',
+        'status_published' => 'Opublikowano',
+        'status_draft' => 'Szkic',
     ],
 ];

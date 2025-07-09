@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Updated At',
         'featured_image' => 'Featured Image',
         'status' => 'Status',
-        'status_active' => 'Active',
-        'status_suspended' => 'Suspended',
+        'status_published' => 'Published',
+        'status_draft' => 'Draft',
     ],
 ];

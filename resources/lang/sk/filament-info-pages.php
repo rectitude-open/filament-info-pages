@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Aktualizované',
         'featured_image' => 'Hlavný obrázok',
         'status' => 'Stav',
-        'status_active' => 'Aktívny',
-        'status_suspended' => 'Pozastavené',
+        'status_published' => 'Publikované',
+        'status_draft' => 'Návrh',
     ],
 ];

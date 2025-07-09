@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Cập nhật lúc',
         'featured_image' => 'Ảnh nổi bật',
         'status' => 'Trạng thái',
-        'status_active' => 'Hoạt động',
-        'status_suspended' => 'Tạm ngưng',
+        'status_published' => 'Đã xuất bản',
+        'status_draft' => 'Bản nháp',
     ],
 ];

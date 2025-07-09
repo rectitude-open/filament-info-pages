@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Atjaunināts',
         'featured_image' => 'Galvenais attēls',
         'status' => 'Statuss',
-        'status_active' => 'Aktīvs',
-        'status_suspended' => 'Apturēts',
+        'status_published' => 'Publicēts',
+        'status_draft' => 'Melnraksts',
     ],
 ];

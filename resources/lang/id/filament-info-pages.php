@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Diperbarui pada',
         'featured_image' => 'Gambar Unggulan',
         'status' => 'Status',
-        'status_active' => 'Aktif',
-        'status_suspended' => 'Ditangguhkan',
+        'status_published' => 'Dipublikasikan',
+        'status_draft' => 'Draf',
     ],
 ];

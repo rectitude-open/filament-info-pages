@@ -17,7 +17,7 @@ return [
         'updated_at' => 'تاریخ بروزرسانی',
         'featured_image' => 'تصویر شاخص',
         'status' => 'وضعیت',
-        'status_active' => 'فعال',
-        'status_suspended' => 'معلق',
+        'status_published' => 'منتشر شده',
+        'status_draft' => 'پیش‌نویس',
     ],
 ];

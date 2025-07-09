@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'nav' => [
-        'label' => 'Pagina’s',
+        'label' => 'Pagina\'s',
         'group' => 'Inhoud',
     ],
     'field' => [
@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Bijgewerkt op',
         'featured_image' => 'Uitgelichte afbeelding',
         'status' => 'Status',
-        'status_active' => 'Actief',
-        'status_suspended' => 'Opgeschort',
+        'status_published' => 'Gepubliceerd',
+        'status_draft' => 'Concept',
     ],
 ];

@@ -17,7 +17,7 @@ return [
         'updated_at' => 'تاريخ التحديث',
         'featured_image' => 'الصورة المميزة',
         'status' => 'الحالة',
-        'status_active' => 'نشط',
-        'status_suspended' => 'معلق',
+        'status_published' => 'منشور',
+        'status_draft' => 'مسودة',
     ],
 ];

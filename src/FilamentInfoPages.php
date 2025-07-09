@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace RectitudeOpen\FilamentInfoPages;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 
 class FilamentInfoPages
 {
     /**
-     * @return class-string<Model>
+     * @return class-string<Page>
      */
     public function getPageModel(): string
     {
@@ -21,22 +20,28 @@ class FilamentInfoPages
     /**
      * @throws ModelNotFoundException
      */
-    public function getPublishedPageByIdOrFail(int $id): Model
+    public function getPublishedPageByIdOrFail(int $id): Page
     {
         $model = $this->getPageModel();
 
-        // @phpstan-ignore-next-line
-        return $model::active()->findOrFail($id);
+        $page = $model::published()->findOrFail($id);
+
+        assert($page instanceof Page);
+
+        return $page;
     }
 
     /**
      * @throws ModelNotFoundException
      */
-    public function getPublishedPageBySlugOrFail(string $slug): Model
+    public function getPublishedPageBySlugOrFail(string $slug): Page
     {
         $model = $this->getPageModel();
 
-        // @phpstan-ignore-next-line
-        return $model::withSlug($slug)->active()->firstOrFail();
+        $page = $model::published()->withSlug($slug)->firstOrFail();
+
+        assert($page instanceof Page);
+
+        return $page;
     }
 }

@@ -89,8 +89,8 @@ class PageResource extends Resource
                                     ->columnSpanFull(),
                                 ToggleButtons::make('status')
                                     ->options([
-                                        1 => __('filament-info-pages::filament-info-pages.field.status_active'),
-                                        2 => __('filament-info-pages::filament-info-pages.field.status_suspended'),
+                                        1 => __('filament-info-pages::filament-info-pages.field.status_published'),
+                                        2 => __('filament-info-pages::filament-info-pages.field.status_draft'),
                                     ])
                                     ->default(1)
                                     ->colors([

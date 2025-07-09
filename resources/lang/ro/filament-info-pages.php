@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Actualizat la',
         'featured_image' => 'Imagine principală',
         'status' => 'Stare',
-        'status_active' => 'Activ',
-        'status_suspended' => 'Suspendat',
+        'status_published' => 'Publicat',
+        'status_draft' => 'Schiță',
     ],
 ];

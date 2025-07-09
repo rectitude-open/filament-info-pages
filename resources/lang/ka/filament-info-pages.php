@@ -17,7 +17,7 @@ return [
         'updated_at' => 'განახლებულია',
         'featured_image' => 'გამორჩეული სურათი',
         'status' => 'სტატუსი',
-        'status_active' => 'აქტიური',
-        'status_suspended' => 'შეჩერებული',
+        'status_published' => 'გამოქვეყნებული',
+        'status_draft' => 'მონახაზი',
     ],
 ];

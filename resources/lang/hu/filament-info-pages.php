@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Frissítve',
         'featured_image' => 'Kiemelt kép',
         'status' => 'Állapot',
-        'status_active' => 'Aktív',
-        'status_suspended' => 'Felfüggesztve',
+        'status_published' => 'Közzétéve',
+        'status_draft' => 'Piszkozat',
     ],
 ];

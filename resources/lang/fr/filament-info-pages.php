@@ -17,7 +17,7 @@ return [
         'updated_at' => 'Mis à jour le',
         'featured_image' => 'Image à la une',
         'status' => 'Statut',
-        'status_active' => 'Actif',
-        'status_suspended' => 'Suspendu',
+        'status_published' => 'Publié',
+        'status_draft' => 'Brouillon',
     ],
 ];
