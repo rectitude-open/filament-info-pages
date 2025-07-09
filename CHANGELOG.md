@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.10.0...v1.10.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* retrieve all latest published pages in getAllLatestPublishedPages method ([79b3d73](https://github.com/rectitude-open/filament-info-pages/commit/79b3d7366e671a9ef0d5147da15d2d63d484f1ca))
+
 ## [1.10.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.9.1...v1.10.0) (2025-07-09)
 
 
