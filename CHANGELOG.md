@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.9.1...v1.10.0) (2025-07-09)
+
+
+### Features
+
+* add getAllLatestPublishedPages method and unify model retrieval method name to getModel ([5aaf181](https://github.com/rectitude-open/filament-info-pages/commit/5aaf181d0dc9225ec903001c7c9fe0c0322c1ebf))
+
 ## [1.9.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.9.0...v1.9.1) (2025-07-01)
 
 
