@@ -18,6 +18,23 @@ class FilamentInfoPages
         return config('filament-info-pages.model', Page::class);
     }
 
+    public function getPage(int | string $identifier): ?Page
+    {
+        $query = $this->getModel()::published();
+
+        if (is_numeric($identifier)) {
+            $query->where('id', $identifier);
+        } else {
+            $query->withSlug($identifier);
+        }
+
+        $page = $query->first();
+
+        assert($page instanceof Page || is_null($page));
+
+        return $page;
+    }
+
     /**
      * @throws ModelNotFoundException
      */
