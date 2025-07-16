@@ -39,6 +39,9 @@
         "pestphp/pest-plugin-laravel": "^2.0"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "RectitudeOpen\\FilamentInfoPages\\": "src/",
             "RectitudeOpen\\FilamentInfoPages\\Database\\Factories\\": "database/factories/"
