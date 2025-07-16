@@ -150,6 +150,10 @@ class PageResource extends Resource
                 CuratorColumn::make('featured_image')
                     ->label('')
                     ->size(30),
+                TextColumn::make('slug')
+                    ->label(__('filament-info-pages::filament-info-pages.field.slug'))
+                    ->copyable()
+                    ->limit(50),
                 IconColumn::make('status')
                     ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->icon(fn ($state): string => match ($state) {
