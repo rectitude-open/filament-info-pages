@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.11.0...v1.11.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* use config for featured image model in Page model ([5cfcbf6](https://github.com/rectitude-open/filament-info-pages/commit/5cfcbf6245352ddb7c0e49c32d02c58da5b1ac3f))
+
 ## [1.11.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.10.1...v1.11.0) (2025-07-16)
 
 
