@@ -63,7 +63,7 @@ class Page extends Model
 
     public function featured_image(): BelongsTo
     {
-        return $this->belongsTo(Media::class, 'featured_image_id', 'id');
+        return $this->belongsTo(config('curator.model', Media::class), 'featured_image_id', 'id');
     }
 
     // @phpstan-ignore-next-line
