@@ -20,6 +20,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Database\Eloquent\Collection;
 use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
@@ -184,6 +185,23 @@ class PageResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\BulkAction::make('replicate')
+                        ->label(__('filament-info-pages::filament-info-pages.info.duplicate_selected'))
+                        ->icon('heroicon-o-document-duplicate')
+                        ->requiresConfirmation()
+                        ->defaultColor('primary')
+                        ->action(function (Collection $records) {
+                            // @phpstan-ignore-next-line
+                            $records->each(function (Page $record) {
+                                $newRecord = $record->replicate();
+                                $newRecord->save();
+
+                                $attributesToCopy = $record->seo->replicate()->getAttributes();
+                                $attributesToCopy['model_id'] = $newRecord->id;
+                                $newRecord->seo()->update($attributesToCopy);
+                            });
+                        })
+                        ->deselectRecordsAfterCompletion(),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');
