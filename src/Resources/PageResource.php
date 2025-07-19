@@ -20,7 +20,9 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use RalphJSmit\Filament\SEO\SEO;
 use RectitudeOpen\FilamentInfoPages\Models\Page;
 use RectitudeOpen\FilamentInfoPages\Resources\PageResource\Pages;
@@ -172,6 +174,7 @@ class PageResource extends Resource
                     ->sortable(),
             ])
             ->filters([
+                Tables\Filters\TrashedFilter::make(),
                 SelectFilter::make('status')
                     ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->options([
@@ -181,10 +184,14 @@ class PageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ForceDeleteAction::make(),
+                Tables\Actions\RestoreAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\ForceDeleteBulkAction::make(),
+                    Tables\Actions\RestoreBulkAction::make(),
                     Tables\Actions\BulkAction::make('replicate')
                         ->label(__('filament-info-pages::filament-info-pages.info.duplicate_selected'))
                         ->icon('heroicon-o-document-duplicate')
@@ -222,5 +229,13 @@ class PageResource extends Resource
             'edit' => Pages\EditPage::route('/{record}/edit'),
             'revisions' => Pages\PageRevisions::route('/{record}/revisions'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->withoutGlobalScopes([
+                SoftDeletingScope::class,
+            ]);
     }
 }
