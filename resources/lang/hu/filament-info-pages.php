@@ -20,4 +20,7 @@ return [
         'status_published' => 'Közzétéve',
         'status_draft' => 'Piszkozat',
     ],
+    'info' => [
+        'duplicate_selected' => 'Kiválasztottak másolása',
+    ],
 ];

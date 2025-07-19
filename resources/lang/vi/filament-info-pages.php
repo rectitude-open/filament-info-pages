@@ -20,4 +20,7 @@ return [
         'status_published' => 'Đã xuất bản',
         'status_draft' => 'Bản nháp',
     ],
+    'info' => [
+        'duplicate_selected' => 'Nhân bản đã chọn',
+    ],
 ];

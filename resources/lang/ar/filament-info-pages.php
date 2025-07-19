@@ -20,4 +20,7 @@ return [
         'status_published' => 'منشور',
         'status_draft' => 'مسودة',
     ],
+    'info' => [
+        'duplicate_selected' => 'نسخ المحدد',
+    ],
 ];

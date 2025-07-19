@@ -20,4 +20,7 @@ return [
         'status_published' => 'Publié',
         'status_draft' => 'Brouillon',
     ],
+    'info' => [
+        'duplicate_selected' => 'Dupliquer la sélection',
+    ],
 ];

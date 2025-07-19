@@ -20,4 +20,7 @@ return [
         'status_published' => 'منتشر شده',
         'status_draft' => 'پیش‌نویس',
     ],
+    'info' => [
+        'duplicate_selected' => 'تکرار انتخاب شده‌ها',
+    ],
 ];

@@ -20,4 +20,7 @@ return [
         'status_published' => 'Опубликовано',
         'status_draft' => 'Черновик',
     ],
+    'info' => [
+        'duplicate_selected' => 'Дублировать выбранные',
+    ],
 ];

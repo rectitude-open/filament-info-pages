@@ -20,4 +20,7 @@ return [
         'status_published' => 'Weşandî',
         'status_draft' => 'Qert',
     ],
+    'info' => [
+        'duplicate_selected' => 'Jêbirina hilbijartî',
+    ],
 ];

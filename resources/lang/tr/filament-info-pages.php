@@ -20,4 +20,7 @@ return [
         'status_published' => 'Yayınlandı',
         'status_draft' => 'Taslak',
     ],
+    'info' => [
+        'duplicate_selected' => 'Seçilenleri çoğalt',
+    ],
 ];

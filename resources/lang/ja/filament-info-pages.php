@@ -20,4 +20,7 @@ return [
         'status_published' => '公開',
         'status_draft' => '下書き',
     ],
+    'info' => [
+        'duplicate_selected' => '選択したものを複製',
+    ],
 ];

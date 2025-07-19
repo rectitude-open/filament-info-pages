@@ -20,4 +20,7 @@ return [
         'status_published' => 'Опубліковано',
         'status_draft' => 'Чернетка',
     ],
+    'info' => [
+        'duplicate_selected' => 'Дублювати вибрані',
+    ],
 ];

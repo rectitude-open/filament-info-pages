@@ -20,4 +20,7 @@ return [
         'status_published' => 'Publicat',
         'status_draft' => 'Schiță',
     ],
+    'info' => [
+        'duplicate_selected' => 'Duplică selecția',
+    ],
 ];

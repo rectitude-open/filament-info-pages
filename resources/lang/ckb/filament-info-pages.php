@@ -20,4 +20,7 @@ return [
         'status_published' => 'بڵاوکراوەتەوە',
         'status_draft' => 'پڕۆژە',
     ],
+    'info' => [
+        'duplicate_selected' => 'دووبارەکردنی هەڵبژێردراو',
+    ],
 ];

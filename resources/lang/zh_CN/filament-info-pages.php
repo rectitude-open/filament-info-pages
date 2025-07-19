@@ -20,4 +20,7 @@ return [
         'status_published' => '已发布',
         'status_draft' => '草稿',
     ],
+    'info' => [
+        'duplicate_selected' => '复制所选项',
+    ],
 ];

@@ -20,4 +20,7 @@ return [
         'status_published' => 'Gepubliceerd',
         'status_draft' => 'Concept',
     ],
+    'info' => [
+        'duplicate_selected' => 'Geselecteerde dupliceren',
+    ],
 ];

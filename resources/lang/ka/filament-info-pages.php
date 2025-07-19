@@ -20,4 +20,7 @@ return [
         'status_published' => 'გამოქვეყნებული',
         'status_draft' => 'მონახაზი',
     ],
+    'info' => [
+        'duplicate_selected' => 'გამეორება არჩეული',
+    ],
 ];

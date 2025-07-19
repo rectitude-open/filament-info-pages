@@ -20,4 +20,7 @@ return [
         'status_published' => 'Publikováno',
         'status_draft' => 'Koncept',
     ],
+    'info' => [
+        'duplicate_selected' => 'Duplikovat vybrané',
+    ],
 ];

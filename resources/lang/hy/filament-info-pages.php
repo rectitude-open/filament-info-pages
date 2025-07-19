@@ -20,4 +20,7 @@ return [
         'status_published' => 'Հրապարակված',
         'status_draft' => 'Սևագիր',
     ],
+    'info' => [
+        'duplicate_selected' => 'Կրկնօրինակել ընտրվածները',
+    ],
 ];

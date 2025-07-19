@@ -20,4 +20,7 @@ return [
         'status_published' => '게시됨',
         'status_draft' => '임시 저장',
     ],
+    'info' => [
+        'duplicate_selected' => '선택 항목 복제',
+    ],
 ];

@@ -20,4 +20,7 @@ return [
         'status_published' => 'Published',
         'status_draft' => 'Draft',
     ],
+    'info' => [
+        'duplicate_selected' => 'Duplicate Selected',
+    ],
 ];

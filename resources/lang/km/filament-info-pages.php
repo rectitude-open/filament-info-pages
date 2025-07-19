@@ -20,4 +20,7 @@ return [
         'status_published' => 'បានផ្សព្វផ្សាយ',
         'status_draft' => 'សេចក្តីព្រាង',
     ],
+    'info' => [
+        'duplicate_selected' => 'ធ្វើចម្លងដែលបានជ្រើស',
+    ],
 ];

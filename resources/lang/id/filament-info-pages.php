@@ -20,4 +20,7 @@ return [
         'status_published' => 'Dipublikasikan',
         'status_draft' => 'Draf',
     ],
+    'info' => [
+        'duplicate_selected' => 'Duplikat yang dipilih',
+    ],
 ];

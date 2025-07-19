@@ -20,4 +20,7 @@ return [
         'status_published' => 'Publicēts',
         'status_draft' => 'Melnraksts',
     ],
+    'info' => [
+        'duplicate_selected' => 'Dublēt izvēlētos',
+    ],
 ];
