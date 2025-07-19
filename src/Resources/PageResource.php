@@ -93,16 +93,16 @@ class PageResource extends Resource
                                 ToggleButtons::make('status')
                                     ->options([
                                         1 => __('filament-info-pages::filament-info-pages.field.status_published'),
-                                        2 => __('filament-info-pages::filament-info-pages.field.status_draft'),
+                                        0 => __('filament-info-pages::filament-info-pages.field.status_draft'),
                                     ])
                                     ->default(1)
                                     ->colors([
                                         1 => 'success',
-                                        2 => 'warning',
+                                        0 => 'warning',
                                     ])
                                     ->icons([
                                         1 => 'heroicon-o-check-circle',
-                                        2 => 'heroicon-o-x-circle',
+                                        0 => 'heroicon-o-x-circle',
                                     ])
                                     ->inline()
                                     ->inlineLabel(),
@@ -161,12 +161,12 @@ class PageResource extends Resource
                     ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->icon(fn ($state): string => match ($state) {
                         1 => 'heroicon-o-check-circle',
-                        2 => 'heroicon-o-x-circle',
+                        0 => 'heroicon-o-x-circle',
                         default => 'heroicon-o-question-mark-circle',
                     })
                     ->color(fn ($state): string => match ($state) {
                         1 => 'success',
-                        2 => 'danger',
+                        0 => 'danger',
                         default => 'warning',
                     }),
                 TextColumn::make('updated_at')
@@ -178,8 +178,8 @@ class PageResource extends Resource
                 SelectFilter::make('status')
                     ->label(__('filament-info-pages::filament-info-pages.field.status'))
                     ->options([
-                        1 => 'Active',
-                        2 => 'Suspended',
+                        1 => __('filament-info-pages::filament-info-pages.field.status_published'),
+                        0 => __('filament-info-pages::filament-info-pages.field.status_draft'),
                     ]),
             ])
             ->actions([
