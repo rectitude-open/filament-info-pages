@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.12.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.11.1...v1.12.0) (2025-07-19)
+
+
+### Features
+
+* add replicate bulk action to PageResource for duplicating selected records ([d0f5dfd](https://github.com/rectitude-open/filament-info-pages/commit/d0f5dfd2ac51462ba3c78a17fc1ffbd2db3c0aa3))
+* add translations for duplicate_selected ([6c2e483](https://github.com/rectitude-open/filament-info-pages/commit/6c2e48340de02a89c14c3cc9c9cd97f7406b2c82))
+* add trashed filter and actions for managing soft-deleted records in PageResource ([0143fef](https://github.com/rectitude-open/filament-info-pages/commit/0143fef15c800b4220fab386d1e791d4b5dcba93))
+* update status values in PageResource to use 0 for draft and adjust related icons and colors ([8497313](https://github.com/rectitude-open/filament-info-pages/commit/8497313439dcd8444e0ffc85f2328b4ed6cfe1e1))
+
 ## [1.11.1](https://github.com/rectitude-open/filament-info-pages/compare/v1.11.0...v1.11.1) (2025-07-18)
 
 
