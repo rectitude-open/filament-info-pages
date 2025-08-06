@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.12.0...v1.13.0) (2025-08-06)
+
+
+### Features
+
+* add model label translations ([72545c6](https://github.com/rectitude-open/filament-info-pages/commit/72545c6ebb90174e632c7426416b7c533ed451f7))
+
+
+### Bug Fixes
+
+* add missing label for status ([97ce5d1](https://github.com/rectitude-open/filament-info-pages/commit/97ce5d17753b4e0b70c673c1d42b5b26a27678a8))
+
 ## [1.12.0](https://github.com/rectitude-open/filament-info-pages/compare/v1.11.1...v1.12.0) (2025-07-19)
 
 
