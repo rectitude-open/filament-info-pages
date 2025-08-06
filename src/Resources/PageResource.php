@@ -91,6 +91,7 @@ class PageResource extends Resource
                                     ->inlineLabel()
                                     ->columnSpanFull(),
                                 ToggleButtons::make('status')
+                                    ->label(__('filament-info-pages::filament-info-pages.field.status'))
                                     ->options([
                                         1 => __('filament-info-pages::filament-info-pages.field.status_published'),
                                         0 => __('filament-info-pages::filament-info-pages.field.status_draft'),
