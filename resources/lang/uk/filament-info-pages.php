@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Дублювати вибрані',
     ],
+    'resource' => [
+        'label' => 'Сторінка',
+    ],
 ];

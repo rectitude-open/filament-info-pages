@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'دووبارەکردنی هەڵبژێردراو',
     ],
+    'resource' => [
+        'label' => 'پەڕە',
+    ],
 ];

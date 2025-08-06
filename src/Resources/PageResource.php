@@ -54,6 +54,11 @@ class PageResource extends Resource
         return __('filament-info-pages::filament-info-pages.nav.group');
     }
 
+    public static function getModelLabel(): string
+    {
+        return __('filament-info-pages::filament-info-pages.resource.label');
+    }
+
     public static function form(Form $form): Form
     {
         $editorClass = config('filament-info-pages.editor_component_class', RichEditor::class);

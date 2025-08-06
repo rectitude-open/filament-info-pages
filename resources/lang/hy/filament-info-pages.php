@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Կրկնօրինակել ընտրվածները',
     ],
+    'resource' => [
+        'label' => 'Էջ',
+    ],
 ];

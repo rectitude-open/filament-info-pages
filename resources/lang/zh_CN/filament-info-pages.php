@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => '复制所选项',
     ],
+    'resource' => [
+        'label' => '页面',
+    ],
 ];

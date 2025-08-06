@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Dupliko të zgjedhurat',
     ],
+    'resource' => [
+        'label' => 'Faqe',
+    ],
 ];

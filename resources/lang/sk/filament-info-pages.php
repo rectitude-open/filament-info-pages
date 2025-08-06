@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Duplikovať vybrané',
     ],
+    'resource' => [
+        'label' => 'Stránka',
+    ],
 ];

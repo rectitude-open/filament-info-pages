@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => '複製所選項目',
     ],
+    'resource' => [
+        'label' => '頁面',
+    ],
 ];

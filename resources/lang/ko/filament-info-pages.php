@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => '선택 항목 복제',
     ],
+    'resource' => [
+        'label' => '페이지',
+    ],
 ];

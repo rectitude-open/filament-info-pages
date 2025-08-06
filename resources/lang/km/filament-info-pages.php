@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'ធ្វើចម្លងដែលបានជ្រើស',
     ],
+    'resource' => [
+        'label' => 'ទំព័រ',
+    ],
 ];

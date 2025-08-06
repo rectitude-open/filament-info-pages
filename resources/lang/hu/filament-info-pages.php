@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Kiválasztottak másolása',
     ],
+    'resource' => [
+        'label' => 'Oldal',
+    ],
 ];

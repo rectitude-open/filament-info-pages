@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'გამეორება არჩეული',
     ],
+    'resource' => [
+        'label' => 'გვერდი',
+    ],
 ];

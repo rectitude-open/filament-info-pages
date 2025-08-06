@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Dublēt izvēlētos',
     ],
+    'resource' => [
+        'label' => 'Lapa',
+    ],
 ];

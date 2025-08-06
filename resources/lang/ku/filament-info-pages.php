@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Jêbirina hilbijartî',
     ],
+    'resource' => [
+        'label' => 'Rûpel',
+    ],
 ];

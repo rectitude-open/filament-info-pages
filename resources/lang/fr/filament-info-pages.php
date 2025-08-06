@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Dupliquer la sélection',
     ],
+    'resource' => [
+        'label' => 'Page',
+    ],
 ];

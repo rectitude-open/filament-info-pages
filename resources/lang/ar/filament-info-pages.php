@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'نسخ المحدد',
     ],
+    'resource' => [
+        'label' => 'الصفحة',
+    ],
 ];

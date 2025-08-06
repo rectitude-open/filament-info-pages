@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'Nhân bản đã chọn',
     ],
+    'resource' => [
+        'label' => 'Trang',
+    ],
 ];

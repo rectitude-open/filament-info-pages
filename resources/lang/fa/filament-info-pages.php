@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => 'تکرار انتخاب شده‌ها',
     ],
+    'resource' => [
+        'label' => 'صفحه',
+    ],
 ];

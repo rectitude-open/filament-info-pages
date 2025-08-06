@@ -23,4 +23,7 @@ return [
     'info' => [
         'duplicate_selected' => '選択したものを複製',
     ],
+    'resource' => [
+        'label' => 'ページ',
+    ],
 ];
